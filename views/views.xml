@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="llista_tasques.list">
+      <field name="name">llista_tasques list</field>
+      <field name="model">llista_tasques.llista_tasques</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="llista_tasques.action_window">
+      <field name="name">llista_tasques window</field>
+      <field name="res_model">llista_tasques.llista_tasques</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="llista_tasques.action_server">
+      <field name="name">llista_tasques server</field>
+      <field name="model_id" ref="model_llista_tasques_llista_tasques"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="llista_tasques" id="llista_tasques.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="llista_tasques.menu_1" parent="llista_tasques.menu_root"/>
+    <menuitem name="Menu 2" id="llista_tasques.menu_2" parent="llista_tasques.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="llista_tasques.menu_1_list" parent="llista_tasques.menu_1"
+              action="llista_tasques.action_window"/>
+    <menuitem name="Server to list" id="llista_tasques" parent="llista_tasques.menu_2"
+              action="llista_tasques.action_server"/>
+    -->
+  </data>
+</odoo>

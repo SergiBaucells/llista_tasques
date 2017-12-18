@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- your initial code in your <app>_view.xml -->
+        <record id="action_todo_task" model="ir.actions.act_window">
+            <field name="name">Tasca per fer</field>
+            <field name="res_model">todo.task</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_type">form</field>
+            <field name="context">{"search_default_filter_to_sell":1}</field>
+            <field name="help" type="html">
+                <p>Per crear una tasca nova apreta el botó Crea.</p>
+            </field>
+        </record>
+
+        <!-- after the action, you can now paste your menu declaration your specified "action","id",
+        "name","sequence", and "parent"-->
+
+        <menuitem action="action_todo_task" id="menu_todo_task" sequence="20" name="Tasques per fer"/>
+
+        <record id="view_form_todo_task" model="ir.ui.view">
+            <field name="name">To-do task form</field>
+            <field name="model">todo.task</field>
+            <field name="arch" type="xml">
+                <form string="Tasca per fer">
+                    <header>
+                        <button name="do_toggle_done" type="object"
+                                string="Fer/Desfer" class="oe_highlight" />
+                        <button name="do_clear_done" type="object"
+                                string="Borrar tasques fetes" />
+                    </header>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name" />
+                            </group>
+                            <group name="group_right">
+                                <field name="isDone" />
+                                <field name="isActive" readonly="1" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_todo_task" model="ir.ui.view">
+            <field name="name">To-do Task Tree</field>
+            <field name="model">todo.task</field>
+            <field name="arch" type="xml">
+                <tree colors="gray:isDone==True">
+                    <field name="name" />
+                    <field name="isDone" />
+                </tree>
+            </field>
+
+        </record>
+    </data>
+</odoo>
